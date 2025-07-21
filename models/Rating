@@ -1,0 +1,23 @@
+const { DataTypes } = require('sequelize');
+const sequelize = require('../config/db.js');
+
+const Rating = sequelize.define('Rating', {
+  rating: {
+    type: DataTypes.FLOAT,
+    allowNull: false,
+  },
+  comment: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  userId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  storeId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+});
+
+module.exports = Rating;
